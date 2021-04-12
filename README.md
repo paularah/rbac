@@ -12,6 +12,7 @@ On the other hand, an admin can make a GET or POST to any of the resources.
 ## Requirements
 This project uses ESM, so you should use a node version that supports ESM ideally v12 or transpile using babel. If turn using v8-10 turn on the experimental ESM feaure.
 
+## Casbin Abstractons  
 The most important of abstraction in Casbin is the PERM metamodel (Policy, Effect, Request, Matchers). PERM metamodel is used to define a Casbin model.
 A Casbin model(model.conf) is a config file that holds the definitions for the elements of the metamodel.
 
