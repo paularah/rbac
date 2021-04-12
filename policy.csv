@@ -1,0 +1,6 @@
+p, ryan, /camicroscope/*, GET
+p, alice, /camicroscope/resource1, POST
+p, erich, /camicroscope/resource1, *
+p, nan, /camicroscope/resource2, GET
+p, nan, /camicroscope/resource3/*, POST
+p, admin, /camicroscope/*, *
