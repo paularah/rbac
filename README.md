@@ -1,9 +1,14 @@
 ## Simple Role Based Authorization with Casbin 
-Implementation RBAC that controls a user access to a resource based on the name and HTTP method
+Implementation RBAC that controls a user's access to a resource based on the name and HTTP method
 
-##
+##using 
+```shell 
+POST http://localhost:8000/camicroscope/resource1?user=ryan
 ```
-```
+Ryan's polciy "p, ryan, /camicroscope/*, GET" only allows him make a GET request to resources under camicroscope. Making a POST request to any other these resource would return a 400. 
+
+On the other hand, an admin can make a GET or POST to any of the resources.
+
 ## Requirements
 This project uses ESM, so you should use a node version that supports ESM ideally v12 or transpile using babel. If turn using v8-10 turn on the experimental ESM feaure.
 
