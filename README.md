@@ -1,7 +1,7 @@
 ## Simple Role Based Authorization with Casbin 
 Implementation RBAC that controls a user's access to a resource based on the name and HTTP method
 
-##using 
+## using 
 ```shell 
 POST http://localhost:8000/camicroscope/resource1?user=ryan
 ```
