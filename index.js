@@ -4,11 +4,12 @@ import routes from "./routes.js"
 
 /**
  * @description checks for the user's role based of the model and policy
- * @param {*} obj - oject here is the user 
- * @param {*} sub 
- * @param {*} act 
+ * @param {*} obj - the oject here is the user 
+ * @param {*} sub  - the subject here is the path to the resource
+ * @param {*} act  - action here is the HTTP method
  * @returns Promise<boolean>
  */
+
 const checkPermission = async (obj, sub, act) => {
     const enforcer = await newEnforcer('model.conf', 'policy.csv');
     const allowed = await enforcer.enforce(obj, sub, act)
@@ -19,10 +20,9 @@ const RBACmiddleware = async (req, res, next) => {
     try{
         const user = req.query.user
         const {path, method} = req;
-        console.log(user, path, method)
         const valid  =  await checkPermission(user, path, method)
-        console.log(valid)
         if(!valid) throw new Error("You are not authorised to access this resource!")
+        console.log("we're in buddies!")
         next();
     }catch(e){
         res.status(400).json({
